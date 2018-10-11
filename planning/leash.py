@@ -1,3 +1,4 @@
+"""FINISHED"""
 class Leash(object):
     def __init__(self, path_list, length, growth_rate):
         self.path = path_list
@@ -19,10 +20,10 @@ class Leash(object):
             else: self.done_generating_targets = True
 
     def displacement_from_target(self, current_position):
-        return magnitude(self.target - current_position)#TODO
+        return (self.target - current_position).magnitude()
 
     def maintain_length(self, current_position):
-        while !self.done_generating_targets and self.displacement_from_target(current_position) < self.desired_length:
+        while not self.done_generating_targets and self.displacement_from_target(current_position) < self.desired_length:
             self.increment(self.growth_rate)
 
     @property
